@@ -35,7 +35,7 @@ public class Main {
         System.out.println(" Task 3 ");
         Set<String> uniqueWords = new HashSet<>(words);
         System.out.println(uniqueWords);
-        System.out.print();
+        //System.out.print();
     }
     public static void task4(List<String> words){
         System.out.println(" Task 4 ");
