@@ -1,43 +1,44 @@
 import java.util.*;
 
 public class Main {
+    private static final List<Integer> nums = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7));
+    private static final List<String> words = new ArrayList<>(List.of("word1", "word1", "word2", "word2", "word3", "word3"));
     public static void main(String[] args) {
-        List<Integer> nums1 = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7));
-        task1(nums1);
-        List<Integer> nums2 = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7));
-        task2(nums2);
-        List<String> words = new ArrayList<>(List.of("word1", "word1", "word2", "word2", "word3", "word3"));
-        task3(words);
 
-        task4(words);
+        task1();
+        task2();
+        task3();
+        task4();
 
     }
-    public static void task1(List<Integer> numbers){
+    public static void task1(){
         System.out.println("Task 1 ");
-        for (Integer number : numbers) {
-            if (number % 2 == 1) {
-                System.out.print(number + " ");
+        for (int num : nums) {
+            if (num % 2 == 1) {
+                System.out.print(num + " ");
             }
         }
         System.out.println();
     }
-    public static void task2(List<Integer> numbers){
+    public static void task2(){
         System.out.println(" Task 2 ");
-        Collection.sort(numbers);
+        Collections.sort(nums);
+        int prevNum = Integer.MIN_VALUE;
 
-        for (Integer number : numbers){
-            if (number % 2 == 0){
-                System.out.print(number + " ");
+        for (int num : nums){
+            if (num % 2 == 0 && num != prevNum){
+                System.out.print(num);
+                prevNum = num;
             }
         }
     }
-    public static void task3(List<String> words){
+    public static void task3(){
         System.out.println(" Task 3 ");
         Set<String> uniqueWords = new HashSet<>(words);
         System.out.println(uniqueWords);
-        //System.out.print();
     }
-    public static void task4(List<String> words){
+    //System.out.println();
+    public static void task4(){
         System.out.println(" Task 4 ");
         Map<String, Integer> map = new HashMap<>();
         for (String word : words){
